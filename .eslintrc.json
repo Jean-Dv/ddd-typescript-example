@@ -9,7 +9,8 @@
         "@typescript-eslint/no-floating-promises": "off",
         "prettier/prettier": "error",
         "semi": ["error", "never"],
-        "@typescript-eslint/semi": ["error", "never"]
+        "@typescript-eslint/semi": ["error", "never"],
+        "@typescript-eslint/no-extraneous-class": "off"
     },
     "plugins": [
         "prettier"

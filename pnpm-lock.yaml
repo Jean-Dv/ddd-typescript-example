@@ -4,6 +4,9 @@ dependencies:
   '@elastic/elasticsearch':
     specifier: 8.7.0
     version: 8.7.0
+  '@types/faker':
+    specifier: 5.5.9
+    version: 5.5.9
   amqplib:
     specifier: 0.10.3
     version: 0.10.3
@@ -169,8 +172,8 @@ devDependencies:
     specifier: ^6.0.0
     version: 6.1.1(eslint@8.41.0)
   faker:
-    specifier: 6.6.6
-    version: 6.6.6
+    specifier: 5.5.3
+    version: 5.5.3
   husky:
     specifier: 8.0.3
     version: 8.0.3
@@ -1261,6 +1264,10 @@ packages:
       '@types/express-serve-static-core': 4.17.35
       '@types/qs': 6.9.7
       '@types/serve-static': 1.15.1
+
+  /@types/faker@5.5.9:
+    resolution: {integrity: sha512-uCx6mP3UY5SIO14XlspxsGjgaemrxpssJI0Ol+GfhxtcKpv9pgRZYsS4eeKeHVLje6Qtc8lGszuBI461+gVZBA==}
+    dev: false
 
   /@types/glob@8.1.0:
     resolution: {integrity: sha512-IO+MJPVhoqz+28h1qLAcBEH2+xHMK6MTyHJc7MTnnYb6wsoLR29POVGJ7LycmVXIqyy/4/2ShP5sUwTXuOwb/w==}
@@ -3230,8 +3237,8 @@ packages:
     engines: {'0': node >=0.6.0}
     dev: true
 
-  /faker@6.6.6:
-    resolution: {integrity: sha512-9tCqYEDHI5RYFQigXFwF1hnCwcWCOJl/hmll0lr5D2Ljjb0o4wphb69wikeJDz5qCEzXCoPvG6ss5SDP6IfOdg==}
+  /faker@5.5.3:
+    resolution: {integrity: sha512-wLTv2a28wjUyWkbnX7u/ABZBkUkIF2fCd73V6P2oFqEGEktDfzWx4UxrSqtPRw0xPRAcjeAOIiJWqZm3pP4u3g==}
     dev: true
 
   /fast-deep-equal@3.1.3:
