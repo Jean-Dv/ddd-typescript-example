@@ -6,6 +6,7 @@ export abstract class DomainEvent {
     aggregateId: string
     eventId: string
     occurredOn: Date
+    attributes: DomainEventAttributes
   }) => DomainEvent
 
   readonly aggregateId: string
