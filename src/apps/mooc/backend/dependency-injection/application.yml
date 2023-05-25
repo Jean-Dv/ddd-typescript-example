@@ -1,2 +1,5 @@
 imports:
   - { resource: apps/application.yml }
+  - { resource: Courses/application.yml }
+  - { resource: CoursesCounter/application.yml }
+  - { resource: Shared/application.yml }
