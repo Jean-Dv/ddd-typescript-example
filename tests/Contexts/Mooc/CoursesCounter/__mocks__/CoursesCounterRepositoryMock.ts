@@ -36,7 +36,7 @@ export class CoursesCounterRepositoryMock implements CoursesCounterRepository {
     const { id: id1, ...counterPrimitives } = counter.toPrimitives()
     const { id: id2, ...lastSavedPrimitives } =
       lastCoursesCounter.toPrimitives()
-    expect(lastSavedPrimitives).toBeInstanceOf(CoursesCounter)
+    expect(lastCoursesCounter).toBeInstanceOf(CoursesCounter)
     expect(lastSavedPrimitives).toEqual(counterPrimitives)
   }
 }
