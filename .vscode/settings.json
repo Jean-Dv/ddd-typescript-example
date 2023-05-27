@@ -1,0 +1,7 @@
+{
+    "conventionalCommits.scopes": [
+        "domain",
+        "__mocks__",
+        "application"
+    ]
+}
