@@ -1,6 +1,6 @@
 import { type Criteria } from "../../../../Shared/domain/criteria/Criteria"
 import { type Filter } from "../../../../Shared/domain/criteria/Filter"
-import { type Operator } from "../../../../Shared/domain/criteria/FilterOperator"
+import { Operator } from "../../../../Shared/domain/criteria/FilterOperator"
 import { type Filters } from "../../../../Shared/domain/criteria/Filters"
 import { type Order } from "../../../../Shared/domain/criteria/Order"
 
@@ -35,7 +35,7 @@ export class MongoCriteriaConverter {
       Operator,
       TransformerFunction<Filter, MongoFilter>
     >([
-      [Operator.Equal, this.equalFilter],
+      [Operator.EQUAL, this.equalFilter],
       [Operator.NOT_EQUAL, this.notEqualFilter],
       [Operator.GT, this.greaterThanFilter],
       [Operator.LT, this.lowerThanFilter],
@@ -68,7 +68,7 @@ export class MongoCriteriaConverter {
       return transformer(filter)
     })
 
-    return Object.assing({}, ...filter)
+    return Object.assign({}, ...filter)
   }
 
   protected generateSort(order: Order): MongoSort {

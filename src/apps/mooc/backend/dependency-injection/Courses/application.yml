@@ -4,7 +4,7 @@ services:
     arguments: ['@Mooc.Shared.ConnectionManager']
 
   Mooc.Courses.application.CourseCreator:
-    class: ../../../../../Contexts/Mooc/Courses/application/CourseCreator
+    class: ../../../../../Contexts/Mooc/Courses/application/Create/CourseCreator
     arguments: ['@Mooc.Courses.domain.CourseRepository', '@Mooc.Shared.domain.EventBus']
 
   Mooc.courses.CreateCourseCommandHandler:
