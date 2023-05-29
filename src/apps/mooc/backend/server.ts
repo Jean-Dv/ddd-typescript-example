@@ -7,7 +7,6 @@ import helmet from "helmet"
 import type * as http from "http"
 import httpStatus from "http-status"
 
-import { load as loadDependencies } from "./dependency-injection"
 import { registerRoutes } from "./routes"
 
 export class Server {
@@ -25,22 +24,19 @@ export class Server {
     this.express.use(helmet.noSniff())
     this.express.use(helmet.hidePoweredBy())
     this.express.use(helmet.frameguard({ action: "deny" }))
-  }
-
-  private async routes(): Promise<void> {
     const router = Router()
-    await loadDependencies()
     router.use(errorHandler())
     this.express.use(router)
     registerRoutes(router)
-    router.use((err: Error, req: Request, res: Response, _next: () => void) => {
-      console.log(err)
-      res.status(httpStatus.INTERNAL_SERVER_ERROR).send(err.message)
-    })
+    router.use(
+      (err: Error, _req: Request, res: Response, _next: () => void) => {
+        console.log(err)
+        res.status(httpStatus.INTERNAL_SERVER_ERROR).send(err.message)
+      }
+    )
   }
 
   async listen(): Promise<void> {
-    await this.routes()
     await new Promise<void>((resolve) => {
       const env = this.express.get("env") as string
       this.httpServer = this.express.listen(this.port, () => {
