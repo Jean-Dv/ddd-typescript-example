@@ -1,1 +1,14 @@
-{}
+{
+  "mongo": { "url": "mongodb://localhost:27017/mooc-backend-test" },
+  "typeorm": { "database": "mooc-backend-dev" },
+  "rabbitmq": {
+    "connectionSettings": {
+      "username": "jyzohqys",
+      "password": "2ajwN_7VX7qY89WV6yrC8G7k6w8uwseZ",
+      "vhost": "jyzohqys",
+      "connection": {
+        "hostname": "albatross-01.rmq.cloudamqp.com"
+      }
+    }
+  }
+}

@@ -1,13 +1,24 @@
 import { type Request, type Response, type Router } from "express"
-
-import type { CoursePutController } from "../controllers/CoursePutController"
+import { body } from "express-validator"
+import { validateReqSchema } from "."
 import container from "../dependency-injection"
 
 export const register = (router: Router): void => {
-  const coursePutController = container.get<CoursePutController>(
+  const reqSchema = [
+    body("id").exists().isString(),
+    body("name").exists().isString(),
+    body("duration").exists().isString(),
+  ]
+  console.log(container.services)
+  const coursePutController = container.get(
     "Apps.mooc.controllers.CoursePutController"
   )
-  router.put("/courses/:id", (req: Request, res: Response) => {
-    coursePutController.run(req, res)
-  })
+  router.put(
+    "/courses/:id",
+    reqSchema,
+    validateReqSchema,
+    (req: Request, res: Response) => {
+      coursePutController.run(req, res)
+    }
+  )
 }

@@ -11,7 +11,6 @@ let eventBus: EventBus
 
 BeforeAll(async () => {
   await ConfigureRabbitMQCommand.run()
-
   environmentArranger = await container.get<Promise<EnvironmentArranger>>(
     "Mooc.EnvironmentArranger"
   )

@@ -140,6 +140,10 @@ export class RabbitMqConnection {
     })
   }
 
+  ack(message: ConsumeMessage): void {
+    this.channel?.ack(message)
+  }
+
   async retry(
     message: ConsumeMessage,
     queue: string,

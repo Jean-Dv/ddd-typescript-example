@@ -7,22 +7,29 @@ SERVICE_NAME := app
 MOOC_APP_NAME := mooc
 BACKOFFICE_APP_NAME := backoffice
 
-# Test if the dependencies we need to run this makefile are installed
+# Test if the dependencies we need to run this Makefile are installed
 DOCKER := $(shell command -v docker)
 DOCKER_COMPOSE := $(shell command -v docker-compose)
 deps:
 ifndef DOCKER
-	@echo "docker is not available please install it"
+	@echo "Docker is not available. Please install docker"
 	@exit 1
 endif
-ifndef
-	@echo "docker-compose is not available please install it"
+ifndef DOCKER_COMPOSE
+	@echo "docker-compose is not available. Please install docker-compose"
 	@exit 1
 endif
 
 default: build
 
-# build image
+# Build image
 build:
-	@echo "Building image..."
-	@docker build -t $(IMAGE_NAME):dev .
+	docker build -t $(IMAGE_NAME):dev .
+
+# Clean containers
+clean:
+	docker-compose down --rmi local --volumes --remove-orphans
+
+# Start databases containers in background
+start_database:
+	docker-compose up -d mongo rabbitmq

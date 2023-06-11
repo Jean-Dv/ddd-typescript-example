@@ -1,4 +1,8 @@
-lockfileVersion: '6.0'
+lockfileVersion: '6.1'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
 
 dependencies:
   '@elastic/elasticsearch':
@@ -65,8 +69,8 @@ dependencies:
     specifier: 5.5.0
     version: 5.5.0
   node-dependency-injection:
-    specifier: 2.7.3
-    version: 2.7.3
+    specifier: 2.6.11
+    version: 2.6.11
   nunjucks:
     specifier: 3.2.4
     version: 3.2.4
@@ -2019,10 +2023,6 @@ packages:
       ieee754: 1.2.1
     dev: false
 
-  /builtins@1.0.3:
-    resolution: {integrity: sha512-uYBjakWipfaO/bXI7E8rq6kpwHRZK5cNYrUv2OzZSI/FvmdMyXJ2tG9dKcjEC5YHmHpUAwsargWIZNWdxb/bnQ==}
-    dev: false
-
   /builtins@5.0.1:
     resolution: {integrity: sha512-qwVpFEHNfhYJIzNRBvd2C1kyo6jz3ZSMPyyuR47OPdiKWlbYnZNyDWuyR175qDnAJLiCo5fBBqPb3RiXgWlkOQ==}
     dependencies:
@@ -2286,9 +2286,9 @@ packages:
     engines: {node: '>= 6'}
     dev: false
 
-  /commander@8.3.0:
-    resolution: {integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==}
-    engines: {node: '>= 12'}
+  /commander@7.2.0:
+    resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==}
+    engines: {node: '>= 10'}
     dev: false
 
   /commander@9.1.0:
@@ -5054,15 +5054,14 @@ packages:
       tslib: 2.5.2
     dev: true
 
-  /node-dependency-injection@2.7.3:
-    resolution: {integrity: sha512-XFUseeNgsPs41yUq2XWg9qr4FsjHZF1jhn4E2qmTspvi7nwbDkwrdIXppptULxjVydeEgXT/qXQ9Idq5n7hAXQ==}
+  /node-dependency-injection@2.6.11:
+    resolution: {integrity: sha512-EY0l6SYLXUK3OnP5UjHc72XbYDUH4/RBC2CBmlWqdwr31bPy5UTeqCh39g8QpU4MMOectBt94qzK4khcyhzTIg==}
     hasBin: true
     dependencies:
       chalk: 4.1.2
-      commander: 8.3.0
+      commander: 7.2.0
       console.table: 0.10.0
       js-yaml: 4.1.0
-      validate-npm-package-name: 3.0.0
     dev: false
 
   /node-int64@0.4.0:
@@ -6761,12 +6760,6 @@ packages:
       '@types/istanbul-lib-coverage': 2.0.4
       convert-source-map: 1.9.0
     dev: true
-
-  /validate-npm-package-name@3.0.0:
-    resolution: {integrity: sha512-M6w37eVCMMouJ9V/sdPGnC5H4uDr73/+xdq0FBLO3TFFX1+7wiUY6Es328NN+y43tmY+doUdN9g9J21vqB7iLw==}
-    dependencies:
-      builtins: 1.0.3
-    dev: false
 
   /validator@13.9.0:
     resolution: {integrity: sha512-B+dGG8U3fdtM0/aNK4/X8CXq/EcxU2WPrPEkJGslb47qyHsxmbggTWK0yEA4qnYVNF+nxNlN88o14hIcPmSIEA==}
